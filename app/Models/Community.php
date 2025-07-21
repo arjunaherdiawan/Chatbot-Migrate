@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\CommunityMember;
 use Illuminate\Database\Eloquent\Model;
 
 class Community extends Model
@@ -14,9 +13,9 @@ class Community extends Model
         'is_active' => 'boolean',
     ];
 
-    public function members()
+    public function Motor()
     {
-        return $this->hasMany(Community::class, 'id_community', 'id_community');
+        return $this->belongsToMany(Motor::class, 'community_motor', 'community_id', 'motor_id', 'id', 'id_motorcycle');
 
     }
 

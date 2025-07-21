@@ -12,4 +12,6 @@ class Event extends Model
     protected $casts = [
         'tgl_data' => 'date' 
     ];
+
+   
 }

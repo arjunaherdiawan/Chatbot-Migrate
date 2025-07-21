@@ -18,7 +18,7 @@ class MainDealer extends Model
 
     public function Service()
     {
-        return $this->hasMany(Cabang::class, 'id_main', 'id_main');
+        return $this->hasMany(Service::class, 'id_main', 'id_main');
     }
     
 }

@@ -23,7 +23,7 @@ class Service extends Model
 
    public function Variant()
    {
-    return $this->belongsTo(MainDealer::class,'id_main','id_main');
+    return $this->belongsToMany(Variant::class, 'service_variant', 'service_id', 'variant_id', 'id_servis', 'id');
    }
 
    public function stats()

@@ -25,9 +25,9 @@ class Variant extends Model
     
     }
 
-    public function stats()
+    public function Motor()
     {
-        return $this->hasOne( Stats::class,'status_id', 'status_id');
+        return $this->hasMany(Motor::class, 'var', 'var');
     }
 
 }

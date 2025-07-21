@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Variant;
 use Illuminate\Database\Eloquent\Model;
 
 class ModelMotor extends Model
@@ -15,7 +14,7 @@ class ModelMotor extends Model
         'is_import' => 'boolean',
     ];
 
-    public function Variant()
+    public function variant()
     {
         return $this->hasMany(Variant::class, 'id_model', 'id_model');
     }

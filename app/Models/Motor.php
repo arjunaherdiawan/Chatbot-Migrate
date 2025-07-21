@@ -2,9 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Brosur;
-use App\Models\Harga;
-use App\Models\Specs;
 use Illuminate\Database\Eloquent\Model;
 
 class Motor extends Model
@@ -12,7 +9,7 @@ class Motor extends Model
     protected $guarded = ['id'];
     protected $table = 'motor';
 
-    public function ModelMotor()
+    public function modelMotor()
     {
         return $this->belongsTo(Motor::class, 'id_motorcycle', 'id_model');
 
@@ -25,11 +22,26 @@ class Motor extends Model
 
     public function harga()
     {
-        return $this->hasMany(Harga::class,'id_motorcycle', 'id_motorcycle');
+        return $this->hasOne(Harga::class,'id_motorcycle', 'id_motorcycle');
     }
 
     public function specs()
     {
         return $this->hasMany(Specs::class,'id_motorcycle', 'id_motorcycle');
+    }
+
+    public function communities()
+    {
+        return $this->belongstoMany(Community::class, 'community_motor', 'motor_id', 'community_id', 'id_motorcycle', 'id');
+    }
+
+    public function promos()
+    {
+        return $this->belongsToMany(Promo::class,'promo_motor', 'motor_id', 'promo_id', 'id_motorcycle', 'id');
+    }
+
+    public function Variant()
+    {
+        return $this->belongsTo(Variant::class, 'var', 'var');
     }
 }

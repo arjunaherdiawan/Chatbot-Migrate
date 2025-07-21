@@ -9,18 +9,21 @@ return new class extends Migration
    
     public function up(): void
     {
-        Schema::create('tb_event', function (Blueprint $table) {
+        Schema::create('promo', function (Blueprint $table)
+        {
             $table->id();
-            $table->integer('id_event')->unique();
-            $table->string('nama_event');
-            $table->date('tgl_data');
+            $table->string('kategori', 20);
+            $table->string('nama_promo', 100);
+            $table->text('desk');
+            $table->time('start_date');
+            $table->time('end_date');
             $table->timestamps();
         });
     }
 
-
+    
     public function down(): void
     {
-       Schema::dropIfExists('tb_event');
+        Schema::dropIfExists('promo');
     }
 };
