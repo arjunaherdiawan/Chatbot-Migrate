@@ -15,8 +15,8 @@ return new class extends Migration
             $table->string('kategori', 20);
             $table->string('nama_promo', 100);
             $table->text('desk');
-            $table->time('start_date');
-            $table->time('end_date');
+            $table->date('start_date');
+            $table->date('end_date');
             $table->timestamps();
         });
     }

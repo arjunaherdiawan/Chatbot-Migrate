@@ -32,7 +32,7 @@ class Motor extends Model
 
     public function communities()
     {
-        return $this->belongstoMany(Community::class, 'community_motor', 'motor_id', 'community_id', 'id_motorcycle', 'id');
+        return $this->belongsToMany(Community::class, 'community_motor', 'motor_id', 'community_id', 'id_motorcycle', 'id');
     }
 
     public function promos()
