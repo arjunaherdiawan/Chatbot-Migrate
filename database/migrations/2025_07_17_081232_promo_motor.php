@@ -12,7 +12,7 @@ return new class extends Migration
         Schema::create('promo_motor', function (Blueprint $table)
         {
         $table->id();
-        $table->unsignedBigInteger('motor_id');
+        $table->integer('motor_id');
         $table->unsignedBigInteger('promo_id');
         $table->timestamps();
 

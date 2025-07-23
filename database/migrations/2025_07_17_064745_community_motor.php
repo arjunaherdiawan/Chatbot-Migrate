@@ -13,7 +13,7 @@ return new class extends Migration
         {
             $table->id();
             $table->unsignedBigInteger('community_id');
-            $table->unsignedBigInteger('motor_id');
+            $table->integer('motor_id');
             $table->timestamps();
 
             $table->foreign('community_id')->references('id')->on('community')->onDelete('cascade');

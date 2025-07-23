@@ -11,6 +11,14 @@ class MainDealer extends Model
 
     protected $table = 'main_dealer';
 
+    protected $fillable =[
+        'id_main',
+        'nama_main',
+        'alamat',
+        'notelp',
+        'email'
+    ];
+
     public function Cabang()
     {
         return $this->hasMany(Cabang::class, 'id_main');
@@ -21,4 +29,8 @@ class MainDealer extends Model
         return $this->hasMany(Service::class, 'id_main', 'id_main');
     }
     
+    public function getRouteKeyName()
+    {
+        return 'id_main';
+    }
 }
