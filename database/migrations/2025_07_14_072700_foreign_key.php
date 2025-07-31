@@ -11,13 +11,6 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::table('service', function (Blueprint $table) {
-            $table->foreign('id_main')
-                ->references('id_main')
-                ->on('main_dealer')
-                ->onDelete('cascade');
-        });
-
         Schema::table('variant', function (Blueprint $table){
             $table->foreign('status_id')
                 ->references('id_servis')
@@ -44,10 +37,6 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::table('service', function(Blueprint $table){
-            $table->dropForeign(['id_main']);
-        });
-
         Schema::table('variant', function(Blueprint $table){
             $table->dropForeign(['status_id']);
             $table->dropForeign(['id_model']);
@@ -60,3 +49,4 @@ return new class extends Migration
         Schema::enableForeignKeyConstraints();
     }
 };
+

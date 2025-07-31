@@ -11,7 +11,7 @@ class Motor extends Model
 
     public function modelMotor()
     {
-        return $this->belongsTo(Motor::class, 'id_motorcycle', 'id_model');
+        return $this->belongsTo(ModelMotor::class, 'id_motorcycle', 'id_model');
 
     }
 

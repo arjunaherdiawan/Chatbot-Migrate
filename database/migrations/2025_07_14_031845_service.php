@@ -19,6 +19,8 @@ return new class extends Migration
             $table->text('notes');
             $table->string('id_main');
             $table->timestamps();
+
+            $table->foreign('id_main')->references('id_main')->on('main_dealer')->onDelete('cascade');
         });
 
 
